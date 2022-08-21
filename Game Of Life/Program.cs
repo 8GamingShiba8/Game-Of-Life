@@ -7,31 +7,24 @@ class Program
     public static void Main()
     {
 
+        while (true )
+        {
+            Console.WriteLine("Cap");
+        }
 
         int M = 10, N = 10;
 
 
 
         int[,] lifeField = new int[M, N];   
-        //    { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        //    { 0, 0, 0, 1, 1, 0, 0, 0, 0, 0 },
-        //    { 0, 1, 0, 0, 1, 0, 0, 0, 0, 0 },
-        //    { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 },
-        //    { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
-        //    { 0, 0, 0, 1, 1, 0, 0, 0, 0, 0 },
-        //    { 0, 0, 1, 1, 0, 0, 1, 0, 0, 0 },
-        //    { 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 },
-        //    { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-        //};
+
 
         bool resume = true;
         while (resume) { 
         try
         {
             Console.WriteLine("Conway’s Game of Life");
-            //Console.WriteLine("Press enter to start the game");
-            //Console.ReadLine();
+
 
             Console.WriteLine("Generate random cells or insert them from text file?\n1-Insert random\n2-Insert from .txt\n>");
             int ans = Convert.ToInt32(Console.ReadLine());
@@ -60,7 +53,6 @@ class Program
                             lifeField = nextGeneration(lifeField, M, N);
                             
                             printFuture(lifeField, M, N);
-                            Console.ReadLine();
                             Thread.Sleep(2000);
                         }
 
@@ -135,10 +127,10 @@ class Program
         Console.WriteLine("Original Generation");
         for (int i = 0; i < M; i++)
         {
-            //Thread.Sleep(50);
+            
             for (int j = 0; j < N; j++)
             {
-                //Thread.Sleep(50);
+                
                 if (grid[i, j] == 0)
                     Console.Write("- ");
                 else
@@ -199,7 +191,6 @@ class Program
                 else
                 {
                     future[l, m] = grid[l, m];
-                    //prevoiusCell = future[l, m];
 
                 }
             }
